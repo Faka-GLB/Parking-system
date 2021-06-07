@@ -1,3 +1,5 @@
 <resources>
-    <string name="app_name">ParkingSystemJava</string>
+    <string name="app_name">EstacionAR</string>
+    <string name="main_activity_text_view_title">EstacionAR</string>
+    <string name="main_activity_button_set_parking">Establecer estacionamientos</string>
 </resources>
