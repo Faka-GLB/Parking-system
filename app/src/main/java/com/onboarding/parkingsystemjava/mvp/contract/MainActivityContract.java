@@ -4,14 +4,14 @@ public interface MainActivityContract {
 
     interface MainActivityPresenter {
         void onSetParkingButtonPressed();
+        void setParkingLots(int lots);
     }
 
     interface MainActivityModel {
-        void setParkingLots();
-        int getParkingLots();
+        void setParkingLots(int setLots);
     }
 
     interface MainActivityView {
-        void showParkingLotsAvailable(int parkingLots);
+        void showConfigureParkingLotsDialogFragment();
     }
 }

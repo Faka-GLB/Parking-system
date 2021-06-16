@@ -4,8 +4,8 @@ import com.onboarding.parkingsystemjava.mvp.contract.MainActivityContract;
 
 public class ParkingPresenter implements MainActivityContract.MainActivityPresenter {
 
-    private MainActivityContract.MainActivityModel model;
-    private MainActivityContract.MainActivityView view;
+    private final MainActivityContract.MainActivityModel model;
+    private final MainActivityContract.MainActivityView view;
 
     public ParkingPresenter(MainActivityContract.MainActivityModel model, MainActivityContract.MainActivityView view) {
         this.model = model;
@@ -14,7 +14,10 @@ public class ParkingPresenter implements MainActivityContract.MainActivityPresen
 
     @Override
     public void onSetParkingButtonPressed() {
-        model.setParkingLots();
-        view.showParkingLotsAvailable(model.getParkingLots());
+        view.showConfigureParkingLotsDialogFragment();
+    }
+
+    public void setParkingLots(int lots) {
+        model.setParkingLots(lots);
     }
 }
