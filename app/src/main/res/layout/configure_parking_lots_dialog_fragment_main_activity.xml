@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="@dimen/dialog_fragment_configure_parking_lots_padding_size_xsmall"
+    tools:context=".activity.MainActivity">
+
+    <TextView
+        android:id="@+id/text_set_parking_dialog_fragment_title"
+        style="@style/baseTextStyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/fragment_configure_parking_lots_title"/>
+
+    <EditText
+        android:id="@+id/edit_text_dialog_fragment_parking_input"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/text_set_parking_dialog_fragment_title"
+        android:layout_marginTop="@dimen/dialog_fragment_configure_parking_lots_margin_size_small"
+        android:hint="@string/fragment_configure_parking_lots_tv_hint"
+        android:inputType="number"
+        android:importantForAutofill="no"/>
+
+    <Button
+        android:id="@+id/btn_dialog_fragment_ok"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/edit_text_dialog_fragment_parking_input"
+        android:layout_marginTop="@dimen/dialog_fragment_configure_parking_lots_margin_size_small"
+        android:layout_marginStart="@dimen/dialog_fragment_configure_parking_lots_margin_size_small"
+        android:text="@string/fragment_configure_parking_lots_btn_ok" />
+
+    <Button
+        android:id="@+id/btn_dialog_fragment_cancel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/edit_text_dialog_fragment_parking_input"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="@dimen/dialog_fragment_configure_parking_lots_margin_size_small"
+        android:layout_marginEnd="@dimen/dialog_fragment_configure_parking_lots_margin_size_small"
+        android:text="@string/fragment_configure_parking_lots_btn_cancel"
+        tools:ignore="RelativeOverlap"/>
+
+</RelativeLayout>
