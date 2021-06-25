@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/tv_reservation_date_picker_hint"
+                style="@style/TextAppearance.AppCompat.Body1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dialog_fragment_margin_size_small"
+                android:text="@string/fragment_reservation_tv_date_picker_hint" />
+
+            <DatePicker
+                android:id="@+id/date_piker_reservation_fragment"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dialog_fragment_margin_size_small"
+                android:datePickerMode="calendar"
+                android:layout_below="@+id/tv_reservation_date_picker_hint"
+                android:headerBackground="@color/purple_700"
+                android:startYear="@integer/reservation_date_picker_start_year" />
+
+            <TextView
+                android:id="@+id/tv_reservation_time_picker_hint"
+                style="@style/TextAppearance.AppCompat.Body1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/date_piker_reservation_fragment"
+                android:layout_marginTop="@dimen/dialog_fragment_margin_size_small"
+                android:text="@string/fragment_reservation_tv_time_picker_hint" />
+
+            <TimePicker
+                android:id="@+id/time_picker_reservation_fragment"
+                style="@android:style/Widget.Material.Light.TimePicker"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tv_reservation_time_picker_hint"
+                android:layout_marginTop="@dimen/dialog_fragment_margin_size_small"
+                android:headerBackground="@color/purple_700"
+                android:numbersSelectorColor="@color/purple_700"
+                android:timePickerMode="spinner" />
+
+            <Button
+                android:id="@+id/btn_reservation_fragment_ok"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/time_picker_reservation_fragment"
+                android:layout_marginStart="@dimen/dialog_fragment_margin_size_small"
+                android:layout_marginTop="@dimen/dialog_fragment_margin_size_small"
+                android:text="@string/fragment_btn_ok" />
+
+            <Button
+                android:id="@+id/btn_reservation_fragment_cancel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/time_picker_reservation_fragment"
+                android:layout_alignParentEnd="true"
+                android:layout_marginTop="@dimen/dialog_fragment_margin_size_small"
+                android:layout_marginEnd="@dimen/dialog_fragment_margin_size_small"
+                android:text="@string/fragment_btn_cancel" />
+        </RelativeLayout>
+    </ScrollView>
+</RelativeLayout>

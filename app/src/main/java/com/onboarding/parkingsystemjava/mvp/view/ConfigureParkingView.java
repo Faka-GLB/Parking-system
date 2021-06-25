@@ -1,6 +1,5 @@
 package com.onboarding.parkingsystemjava.mvp.view;
 
-
 import android.content.Context;
 import android.widget.Toast;
 import androidx.fragment.app.DialogFragment;
@@ -9,7 +8,7 @@ import com.onboarding.parkingsystemjava.databinding.ConfigureParkingLotsDialogFr
 import com.onboarding.parkingsystemjava.mvp.contract.ConfigureParkingLotsContract;
 import com.onboarding.parkingsystemjava.mvp.view.base.FragmentView;
 
-public class ConfigureParkingView extends FragmentView implements ConfigureParkingLotsContract.SetParkingView {
+public class ConfigureParkingView extends FragmentView implements ConfigureParkingLotsContract.ConfigureParkingView {
     private final ConfigureParkingLotsDialogFragmentMainActivityBinding binding;
 
     public ConfigureParkingView(DialogFragment fragment, ConfigureParkingLotsDialogFragmentMainActivityBinding binding) {

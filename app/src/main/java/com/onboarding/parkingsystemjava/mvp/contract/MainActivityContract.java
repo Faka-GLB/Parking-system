@@ -5,6 +5,7 @@ public interface MainActivityContract {
     interface MainActivityPresenter {
         void onSetParkingButtonPressed();
         void setParkingLots(int lots);
+        void onNewReservationButtonPressed();
     }
 
     interface MainActivityModel {
@@ -13,5 +14,6 @@ public interface MainActivityContract {
 
     interface MainActivityView {
         void showConfigureParkingLotsDialogFragment();
+        void showNewReservationActivity();
     }
 }

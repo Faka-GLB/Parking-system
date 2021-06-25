@@ -18,7 +18,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/text_set_parking_dialog_fragment_title"
-        android:layout_marginTop="@dimen/dialog_fragment_configure_parking_lots_margin_size_small"
+        android:layout_marginTop="@dimen/dialog_fragment_margin_size_small"
         android:hint="@string/fragment_configure_parking_lots_tv_hint"
         android:inputType="number"
         android:importantForAutofill="no"/>
@@ -28,9 +28,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/edit_text_dialog_fragment_parking_input"
-        android:layout_marginTop="@dimen/dialog_fragment_configure_parking_lots_margin_size_small"
-        android:layout_marginStart="@dimen/dialog_fragment_configure_parking_lots_margin_size_small"
-        android:text="@string/fragment_configure_parking_lots_btn_ok" />
+        android:layout_marginTop="@dimen/dialog_fragment_margin_size_small"
+        android:layout_marginStart="@dimen/dialog_fragment_margin_size_small"
+        android:text="@string/fragment_btn_ok" />
 
     <Button
         android:id="@+id/btn_dialog_fragment_cancel"
@@ -38,9 +38,9 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/edit_text_dialog_fragment_parking_input"
         android:layout_alignParentEnd="true"
-        android:layout_marginTop="@dimen/dialog_fragment_configure_parking_lots_margin_size_small"
-        android:layout_marginEnd="@dimen/dialog_fragment_configure_parking_lots_margin_size_small"
-        android:text="@string/fragment_configure_parking_lots_btn_cancel"
+        android:layout_marginTop="@dimen/dialog_fragment_margin_size_small"
+        android:layout_marginEnd="@dimen/dialog_fragment_margin_size_small"
+        android:text="@string/fragment_btn_cancel"
         tools:ignore="RelativeOverlap"/>
 
 </RelativeLayout>
