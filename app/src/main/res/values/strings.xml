@@ -3,9 +3,19 @@
     <string name="main_activity_text_view_title">EstacionAR</string>
     <string name="main_activity_button_set_parking">Establecer estacionamientos</string>
     <string name="fragment_configure_parking_lots_title">Establecer estacionamientos</string>
-    <string name="fragment_configure_parking_lots_btn_ok">OK</string>
-    <string name="fragment_configure_parking_lots_btn_cancel">Cancelar</string>
+    <string name="fragment_btn_ok">OK</string>
+    <string name="fragment_btn_cancel">Cancelar</string>
     <string name="fragment_configure_parking_lots_tv_hint">Ingrese cantidad de espacios…</string>
     <string name="fragment_configure_parking_lots_toast_empty_input">Por favor ingrese un numero.</string>
     <string name="fragment_configure_parking_lots_toast_confirm">Se establecieron %1$d estacionamientos</string>
+    <string name="main_activity_btn_new_reservation">Nueva reserva</string>
+    <string name="activity_new_reservation_tv_title">Nueva reserva</string>
+    <string name="fragment_reservation_tv_date_picker_hint">Seleccione una fecha</string>
+    <string name="fragment_reservation_tv_time_picker_hint">Seleccione un horario</string>
+    <string name="reservation_activiy_btn_start_date">Seleccionar inicio</string>
+    <string name="reservation_activiy_btn_end_date">Seleccionar fin</string>
+    <string name="reservation_activiy_tv_start_date_hint">Inicio de reserva</string>
+    <string name="reservation_activiy_tv_end_date_hint">Fin de reserva</string>
+    <string name="reservation_activiy_edit_text_lot_number_hint">Ingrese su numero de estacionamiento</string>
+    <string name="reservation_activiy_edit_text_password_hint">Ingrese su clave</string>
 </resources>

@@ -3,11 +3,11 @@ package com.onboarding.parkingsystemjava.mvp.presenter;
 import com.onboarding.parkingsystemjava.listener.OnInputListener;
 import com.onboarding.parkingsystemjava.mvp.contract.ConfigureParkingLotsContract;
 
-public class ConfigureParkingPresenter implements ConfigureParkingLotsContract.SetParkingPresenter {
-    private final ConfigureParkingLotsContract.SetParkingView view;
+public class ConfigureParkingPresenter implements ConfigureParkingLotsContract.ConfigureParkingPresenter {
+    private final ConfigureParkingLotsContract.ConfigureParkingView view;
     private final OnInputListener inputListener;
 
-    public ConfigureParkingPresenter(OnInputListener inputListener, ConfigureParkingLotsContract.SetParkingView view) {
+    public ConfigureParkingPresenter(OnInputListener inputListener, ConfigureParkingLotsContract.ConfigureParkingView view) {
         this.view = view;
         this.inputListener = inputListener;
     }

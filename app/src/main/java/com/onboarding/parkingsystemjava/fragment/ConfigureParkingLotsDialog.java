@@ -18,7 +18,7 @@ import com.onboarding.parkingsystemjava.utils.ConstantUtils;
 
 public class ConfigureParkingLotsDialog extends DialogFragment {
 
-    private ConfigureParkingLotsContract.SetParkingPresenter presenter;
+    private ConfigureParkingLotsContract.ConfigureParkingPresenter presenter;
     private ConfigureParkingLotsDialogFragmentMainActivityBinding binding;
     private OnInputListener inputListener;
 
@@ -30,7 +30,7 @@ public class ConfigureParkingLotsDialog extends DialogFragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
         binding = ConfigureParkingLotsDialogFragmentMainActivityBinding.inflate(getLayoutInflater());
         View view = binding.getRoot();
-        this.presenter = new ConfigureParkingPresenter(this.inputListener, new ConfigureParkingView((DialogFragment)this, binding));
+        this.presenter = new ConfigureParkingPresenter(this.inputListener, new ConfigureParkingView((DialogFragment) this, binding));
         setListeners();
 
         return view;

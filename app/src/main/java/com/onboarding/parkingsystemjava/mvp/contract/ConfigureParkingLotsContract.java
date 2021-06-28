@@ -2,12 +2,12 @@ package com.onboarding.parkingsystemjava.mvp.contract;
 
 public interface ConfigureParkingLotsContract {
 
-    interface SetParkingPresenter {
+    interface ConfigureParkingPresenter {
         void OnOkButtonPress();
         void OnCancelButtonPress();
     }
 
-    interface SetParkingView {
+    interface ConfigureParkingView {
         String getLots();
         void closeDialog();
         void showEmptyInputToast();
