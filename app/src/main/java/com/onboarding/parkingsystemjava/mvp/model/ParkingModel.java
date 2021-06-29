@@ -1,16 +1,17 @@
 package com.onboarding.parkingsystemjava.mvp.model;
 
+import com.onboarding.parkingsystemjava.database.ParkingDatabase;
 import com.onboarding.parkingsystemjava.mvp.contract.MainActivityContract;
 
 public class ParkingModel implements MainActivityContract.MainActivityModel {
-    private int parkingLots;
+    private final ParkingDatabase database;
 
-    public ParkingModel() {
-        this.parkingLots = 0;
+    public ParkingModel(ParkingDatabase database) {
+        this.database = database;
     }
 
     @Override
     public void setParkingLots(int setLots) {
-        this.parkingLots = setLots;
+        this.database.setParkingLots(setLots);
     }
 }

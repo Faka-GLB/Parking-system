@@ -13,6 +13,5 @@ public interface DateTimePickerContract {
         void dismissDateTimePicker();
         void sendStartDateTime(DateTimeListener dateTimeListener);
         void sendEndDateTime(DateTimeListener dateTimeListener);
-        String getDate();
     }
 }

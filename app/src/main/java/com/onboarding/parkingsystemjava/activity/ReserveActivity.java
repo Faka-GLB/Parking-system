@@ -3,11 +3,14 @@ package com.onboarding.parkingsystemjava.activity;
 import android.os.Bundle;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import com.onboarding.parkingsystemjava.database.ParkingDatabase;
 import com.onboarding.parkingsystemjava.databinding.ActivityNewReservationBinding;
 import com.onboarding.parkingsystemjava.listener.DateTimeListener;
 import com.onboarding.parkingsystemjava.mvp.contract.ReserveActivityContract;
+import com.onboarding.parkingsystemjava.mvp.model.ReserveModel;
 import com.onboarding.parkingsystemjava.mvp.presenter.ReservePresenter;
 import com.onboarding.parkingsystemjava.mvp.view.ReserveView;
+import java.util.Calendar;
 
 public class ReserveActivity extends AppCompatActivity implements DateTimeListener {
     private ReserveActivityContract.ReservePresenter presenter;
@@ -18,7 +21,7 @@ public class ReserveActivity extends AppCompatActivity implements DateTimeListen
         super.onCreate(savedInstanceState);
         this.binding = ActivityNewReservationBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
-        this.presenter = new ReservePresenter(new ReserveView(this, binding));
+        this.presenter = new ReservePresenter(new ReserveView(this, binding), new ReserveModel(ParkingDatabase.getInstance()));
 
         setListeners();
     }
@@ -31,11 +34,11 @@ public class ReserveActivity extends AppCompatActivity implements DateTimeListen
     }
 
     @Override
-    public void sendStartDateTime(String dateTime) {
-        presenter.setStartDateTextView(dateTime);
+    public void sendStartDateTime(Calendar dateTimeCalendar) {
+        presenter.setReservationStartDate(dateTimeCalendar);
     }
 
-    public void sendEndDateTime(String dateTime) {
-        presenter.setEndDateTextView(dateTime);
+    public void sendEndDateTime(Calendar dateTimeCalendar) {
+        presenter.setReservationEndDate(dateTimeCalendar);
     }
 }

@@ -20,7 +20,7 @@ public class ParkingView extends ActivityView implements MainActivityContract.Ma
         Activity activity = getActivity();
         if (activity != null) {
             ConfigureParkingLotsDialog dialog = ConfigureParkingLotsDialog.newInstance();
-            dialog.show(((AppCompatActivity)activity).getSupportFragmentManager(), ConstantUtils.PARKING_VIEW_TAG);
+            dialog.show(((AppCompatActivity) activity).getSupportFragmentManager(), ConstantUtils.PARKING_VIEW_TAG);
         }
     }
 

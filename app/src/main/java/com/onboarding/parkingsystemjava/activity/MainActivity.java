@@ -2,6 +2,7 @@ package com.onboarding.parkingsystemjava.activity;
 
 import android.os.Bundle;
 import androidx.appcompat.app.AppCompatActivity;
+import com.onboarding.parkingsystemjava.database.ParkingDatabase;
 import com.onboarding.parkingsystemjava.databinding.ActivityMainBinding;
 import com.onboarding.parkingsystemjava.listener.OnInputListener;
 import com.onboarding.parkingsystemjava.mvp.contract.MainActivityContract;
@@ -19,7 +20,7 @@ public class MainActivity extends AppCompatActivity implements OnInputListener {
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
-        presenter = new ParkingPresenter(new ParkingModel(), new ParkingView(this));
+        presenter = new ParkingPresenter(new ParkingModel(ParkingDatabase.getInstance()), new ParkingView(this));
         setListeners();
     }
 
