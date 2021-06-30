@@ -1,13 +1,20 @@
 package com.onboarding.parkingsystemjava.mvp.presenter;
 
+import com.onboarding.parkingsystemjava.entity.Reservation;
 import com.onboarding.parkingsystemjava.mvp.contract.ReserveActivityContract;
+import com.onboarding.parkingsystemjava.utils.ConstantUtils;
+import com.onboarding.parkingsystemjava.utils.ReserveComprobation;
+import java.util.Calendar;
 
 public class ReservePresenter implements ReserveActivityContract.ReservePresenter {
 
     private final ReserveActivityContract.ReserveView view;
+    private final ReserveActivityContract.ReserveModel model;
 
-    public ReservePresenter(ReserveActivityContract.ReserveView view) {
+
+    public ReservePresenter(ReserveActivityContract.ReserveView view, ReserveActivityContract.ReserveModel model) {
         this.view = view;
+        this.model = model;
     }
 
     @Override
@@ -22,7 +29,30 @@ public class ReservePresenter implements ReserveActivityContract.ReservePresente
 
     @Override
     public void onOkButtonPress() {
-        view.returnToMainActivity();
+        model.setReservationInfo(view.getParkingLot(), view.getUserPassword());
+        Reservation reservation = model.getReservation();
+        ReserveComprobation comprobation = model.reserveFieldsCheck(reservation);
+        switch (comprobation) {
+            case MISSING_START:
+                view.showMissingStartDateToast();
+                break;
+            case MISSING_END:
+                view.showMissingEndDateToast();
+                break;
+            case MISSING_LOT:
+                view.showMissingParkingLotToast();
+                break;
+            case MISSING_PASSWORD:
+                view.showMissingUserPasswordToast();
+                break;
+            case COMPROBATION_OK:
+                view.showReserveSavedToast();
+                break;
+        }
+        if (comprobation == ReserveComprobation.COMPROBATION_OK) {
+            model.addReservation(reservation);
+            view.returnToMainActivity();
+        }
     }
 
     @Override
@@ -30,11 +60,21 @@ public class ReservePresenter implements ReserveActivityContract.ReservePresente
         view.returnToMainActivity();
     }
 
-    public void setStartDateTextView(String date) {
-        view.setStartDateTextView(date);
+    public void setReservationStartDate(Calendar startDate) {
+        model.setStartDate(startDate);
+        view.setStartDateTextView(getDateString(model.getStartDate()));
     }
 
-    public void setEndDateTextView(String date) {
-        view.setEndDateTextView(date);
+    public void setReservationEndDate(Calendar endDate) {
+        model.setEndDate(endDate);
+        view.setEndDateTextView(getDateString(model.getEndDate()));
+    }
+
+    private String getDateString(Calendar date) {
+        return (date.get(Calendar.DAY_OF_MONTH) + ConstantUtils.SLASH +
+                date.get(Calendar.MONTH) + ConstantUtils.SLASH +
+                date.get(Calendar.YEAR) + ConstantUtils.SPACE +
+                date.get(Calendar.HOUR) + ConstantUtils.COLON +
+                date.get(Calendar.MINUTE));
     }
 }

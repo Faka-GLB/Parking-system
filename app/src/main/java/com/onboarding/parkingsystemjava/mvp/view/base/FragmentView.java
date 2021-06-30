@@ -1,17 +1,17 @@
 package com.onboarding.parkingsystemjava.mvp.view.base;
 
 import android.content.Context;
-import androidx.fragment.app.DialogFragment;
+import androidx.fragment.app.Fragment;
 import java.lang.ref.WeakReference;
 
 public class FragmentView {
-    private final WeakReference<DialogFragment> fragmentRef;
+    private final WeakReference<Fragment> fragmentRef;
 
-    public FragmentView(DialogFragment dialogFragment) {
-        fragmentRef = new WeakReference<>(dialogFragment);
+    public FragmentView(Fragment fragment) {
+        fragmentRef = new WeakReference<>(fragment);
     }
 
-    public DialogFragment getFragment() {
+    public Fragment getFragment() {
         return fragmentRef.get();
     }
 

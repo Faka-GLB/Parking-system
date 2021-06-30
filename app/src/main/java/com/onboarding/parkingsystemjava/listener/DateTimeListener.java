@@ -1,6 +1,8 @@
 package com.onboarding.parkingsystemjava.listener;
 
+import java.util.Calendar;
+
 public interface DateTimeListener {
-    void sendStartDateTime(String dateTime);
-    void sendEndDateTime(String dateTime);
+    void sendStartDateTime(Calendar dateTimeCalendar);
+    void sendEndDateTime(Calendar dateTimeCalendar);
 }

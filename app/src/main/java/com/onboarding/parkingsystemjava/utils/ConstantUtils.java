@@ -8,4 +8,6 @@ public class ConstantUtils {
     public static String SLASH = "/";
     public static String COLON = ":";
     public static String SPACE = " ";
+    public static int INT_ONE = 1;
+    public static int INT_MINUS_ONE = -1;
 }

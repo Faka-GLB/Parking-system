@@ -6,6 +6,8 @@ import com.onboarding.parkingsystemjava.listener.DateTimeListener;
 import com.onboarding.parkingsystemjava.mvp.contract.DateTimePickerContract;
 import com.onboarding.parkingsystemjava.mvp.view.base.FragmentView;
 import com.onboarding.parkingsystemjava.utils.ConstantUtils;
+import java.util.Calendar;
+import java.util.GregorianCalendar;
 
 public class DateTimePickerView extends FragmentView implements DateTimePickerContract.DateTimePickerView {
 
@@ -18,7 +20,7 @@ public class DateTimePickerView extends FragmentView implements DateTimePickerCo
 
     @Override
     public void dismissDateTimePicker() {
-        DialogFragment fragment = getFragment();
+        DialogFragment fragment = (DialogFragment) getFragment();
         if (fragment != null) {
             fragment.dismiss();
         }
@@ -26,20 +28,21 @@ public class DateTimePickerView extends FragmentView implements DateTimePickerCo
 
     @Override
     public void sendStartDateTime(DateTimeListener dateTimeListener) {
-        dateTimeListener.sendStartDateTime(getDate());
+        dateTimeListener.sendStartDateTime(getCalendar());
     }
 
     @Override
     public void sendEndDateTime(DateTimeListener dateTimeListener) {
-        dateTimeListener.sendEndDateTime(getDate());
+        dateTimeListener.sendEndDateTime(getCalendar());
     }
 
-    @Override
-    public String getDate() {
-        return (binding.datePikerReservationFragment.getDayOfMonth() + ConstantUtils.SLASH +
-                binding.datePikerReservationFragment.getMonth() + ConstantUtils.SLASH +
-                binding.datePikerReservationFragment.getYear() + ConstantUtils.SPACE +
-                binding.timePickerReservationFragment.getHour() + ConstantUtils.COLON +
+    private Calendar getCalendar() {
+        Calendar dateTime = new GregorianCalendar();
+        dateTime.set(binding.datePikerReservationFragment.getYear(),
+                binding.datePikerReservationFragment.getMonth() - ConstantUtils.INT_ONE,
+                binding.datePikerReservationFragment.getDayOfMonth(),
+                binding.timePickerReservationFragment.getHour(),
                 binding.timePickerReservationFragment.getMinute());
+        return dateTime;
     }
 }

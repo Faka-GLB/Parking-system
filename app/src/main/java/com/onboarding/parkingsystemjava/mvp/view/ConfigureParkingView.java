@@ -23,8 +23,8 @@ public class ConfigureParkingView extends FragmentView implements ConfigureParki
 
     @Override
     public void closeDialog() {
-        DialogFragment fragment = getFragment();
-        if (fragment != null){
+        DialogFragment fragment = (DialogFragment) getFragment();
+        if (fragment != null) {
             fragment.dismiss();
         }
     }
