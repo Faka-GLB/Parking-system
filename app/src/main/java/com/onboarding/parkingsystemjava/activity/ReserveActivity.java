@@ -1,5 +1,6 @@
 package com.onboarding.parkingsystemjava.activity;
 
+import android.app.Activity;
 import android.os.Bundle;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
@@ -10,6 +11,7 @@ import com.onboarding.parkingsystemjava.mvp.contract.ReserveActivityContract;
 import com.onboarding.parkingsystemjava.mvp.model.ReserveModel;
 import com.onboarding.parkingsystemjava.mvp.presenter.ReservePresenter;
 import com.onboarding.parkingsystemjava.mvp.view.ReserveView;
+import com.onboarding.parkingsystemjava.utils.ReservationVerifier;
 import java.util.Calendar;
 
 public class ReserveActivity extends AppCompatActivity implements DateTimeListener {
@@ -21,8 +23,7 @@ public class ReserveActivity extends AppCompatActivity implements DateTimeListen
         super.onCreate(savedInstanceState);
         this.binding = ActivityNewReservationBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
-        this.presenter = new ReservePresenter(new ReserveView(this, binding), new ReserveModel(ParkingDatabase.getInstance()));
-
+        this.presenter = new ReservePresenter(new ReserveView(this, binding), new ReserveModel(ParkingDatabase.getInstance(), new ReservationVerifier(ParkingDatabase.getInstance())));
         setListeners();
     }
 

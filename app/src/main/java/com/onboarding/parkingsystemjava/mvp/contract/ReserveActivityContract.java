@@ -26,6 +26,7 @@ public interface ReserveActivityContract {
         void showMissingParkingLotToast();
         void showMissingUserPasswordToast();
         void showReserveSavedToast();
+        void showReservationOverlapToast();
     }
 
     interface ReserveModel {

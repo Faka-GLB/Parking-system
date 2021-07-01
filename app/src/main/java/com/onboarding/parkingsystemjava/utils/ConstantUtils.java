@@ -8,6 +8,8 @@ public class ConstantUtils {
     public static String SLASH = "/";
     public static String COLON = ":";
     public static String SPACE = " ";
-    public static int INT_ONE = 1;
-    public static int INT_MINUS_ONE = -1;
+    public static int MONTH_ADJUSTMENT = 1;
+    public static int INT_ZERO = 0;
+    public static int LOT_NOT_SET_VALUE = -1;
 }
+
