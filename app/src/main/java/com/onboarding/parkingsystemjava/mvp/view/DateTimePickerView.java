@@ -39,7 +39,7 @@ public class DateTimePickerView extends FragmentView implements DateTimePickerCo
     private Calendar getCalendar() {
         Calendar dateTime = new GregorianCalendar();
         dateTime.set(binding.datePikerReservationFragment.getYear(),
-                binding.datePikerReservationFragment.getMonth() - ConstantUtils.MONTH_ADJUSTMENT,
+                binding.datePikerReservationFragment.getMonth(),
                 binding.datePikerReservationFragment.getDayOfMonth(),
                 binding.timePickerReservationFragment.getHour(),
                 binding.timePickerReservationFragment.getMinute());

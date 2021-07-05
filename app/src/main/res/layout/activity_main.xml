@@ -27,5 +27,13 @@
         android:insetTop="@dimen/button_main_inset_vertical_size_xsmall"
         android:insetBottom="@dimen/button_main_inset_vertical_size_xsmall"
         android:text="@string/main_activity_btn_new_reservation" />
+
+    <Button
+        android:id="@+id/button_main_remove_old_reservations"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:insetTop="@dimen/button_main_inset_vertical_size_xsmall"
+        android:insetBottom="@dimen/button_main_inset_vertical_size_xsmall"
+        android:text="@string/main_activity_btn_remove_old_reservations" />
 </LinearLayout>
 

@@ -17,6 +17,7 @@ public class ParkingPresenter implements MainActivityContract.MainActivityPresen
         view.showConfigureParkingLotsDialogFragment();
     }
 
+    @Override
     public void setParkingLots(int lots) {
         model.setParkingLots(lots);
     }
@@ -24,5 +25,10 @@ public class ParkingPresenter implements MainActivityContract.MainActivityPresen
     @Override
     public void onNewReservationButtonPressed() {
         view.showNewReservationActivity();
+    }
+
+    @Override
+    public void removeOldReservations() {
+        view.showReservationsRemovedToast(model.removeOldReservations());
     }
 }

@@ -27,6 +27,7 @@ public class MainActivity extends AppCompatActivity implements OnInputListener {
     private void setListeners() {
         binding.buttonMainSetParkingSpaces.setOnClickListener(view -> presenter.onSetParkingButtonPressed());
         binding.buttonMainNewReservation.setOnClickListener(view -> presenter.onNewReservationButtonPressed());
+        binding.buttonMainRemoveOldReservations.setOnClickListener(view -> presenter.removeOldReservations());
     }
 
     @Override

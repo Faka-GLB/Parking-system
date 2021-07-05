@@ -14,4 +14,9 @@ public class ParkingModel implements MainActivityContract.MainActivityModel {
     public void setParkingLots(int setLots) {
         this.database.setParkingLots(setLots);
     }
+
+    @Override
+    public int removeOldReservations() {
+        return database.deleteOldReservations();
+    }
 }
