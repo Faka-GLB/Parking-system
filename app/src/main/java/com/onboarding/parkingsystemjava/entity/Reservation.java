@@ -10,7 +10,7 @@ public class Reservation {
     private String userPassword;
 
     public Reservation() {
-        this.parkingLot = - ConstantUtils.INT_ONE;
+        this.parkingLot = ConstantUtils.LOT_NOT_SET_VALUE;
         this.startDate = null;
         this.endDate = null;
     }

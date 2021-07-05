@@ -23,4 +23,5 @@
     <string name="reservation_view_missing_parking_lot_toast">Por favor ingrese el número de estacionamiento</string>
     <string name="reservation_view_missing_user_password_toast">Por favor ingrese su clave</string>
     <string name="reservation_view_reservation_saved_toast">Reserva guardada con éxito</string>
+    <string name="reservation_view_reservation_overlap_toast">Error: ya hay una reserva en ese espacio y horario</string>
 </resources>

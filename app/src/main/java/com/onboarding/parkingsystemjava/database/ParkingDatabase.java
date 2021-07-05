@@ -2,10 +2,11 @@ package com.onboarding.parkingsystemjava.database;
 
 import com.onboarding.parkingsystemjava.entity.Reservation;
 import java.util.ArrayList;
+import java.util.HashMap;
 
 public class ParkingDatabase {
     private static ParkingDatabase singleInstance = null;
-    private final ArrayList<Reservation> reservations = new ArrayList<>();
+    private final HashMap<Integer, ArrayList<Reservation>> reservations = new HashMap<>();
     private int parkingLots;
 
     private ParkingDatabase() {
@@ -18,12 +19,19 @@ public class ParkingDatabase {
         return singleInstance;
     }
 
-    public ArrayList<Reservation> getReservations() {
+    public HashMap<Integer, ArrayList<Reservation>> getReservations() {
         return reservations;
     }
 
-    public void addReservations(Reservation reservation) {
-        this.reservations.add(reservation);
+    public void addReservation(Reservation reserve) {
+        int lot = reserve.getParkingLot();
+        if (reservations.containsKey(lot)) {
+            this.reservations.get(lot).add(reserve);
+        } else {
+            ArrayList<Reservation> arrayList = new ArrayList<>();
+            arrayList.add(reserve);
+            this.reservations.put(lot, arrayList);
+        }
     }
 
     public int getParkingLots() {

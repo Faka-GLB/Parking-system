@@ -49,7 +49,7 @@ public class ReserveView extends ActivityView implements ReserveActivityContract
     public int getParkingLot() {
         String lot = binding.editTextNewReservationActivityLotNumber.getText().toString();
         if (lot.isEmpty()) {
-            return ConstantUtils.INT_MINUS_ONE; //-1 used in model to check if user has set a parking lot
+            return ConstantUtils.LOT_NOT_SET_VALUE; //-1 used in model to check if user has set a parking lot
         } else
             return Integer.parseInt(lot);
     }
@@ -82,6 +82,11 @@ public class ReserveView extends ActivityView implements ReserveActivityContract
     @Override
     public void showReserveSavedToast() {
         showComprobationToast(R.string.reservation_view_reservation_saved_toast);
+    }
+
+    @Override
+    public void showReservationOverlapToast() {
+        showComprobationToast(R.string.reservation_view_reservation_overlap_toast);
     }
 
     private void showComprobationToast(int messageId) {

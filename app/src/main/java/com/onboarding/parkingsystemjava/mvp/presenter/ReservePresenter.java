@@ -48,6 +48,8 @@ public class ReservePresenter implements ReserveActivityContract.ReservePresente
             case COMPROBATION_OK:
                 view.showReserveSavedToast();
                 break;
+            case RESERVATION_OVERLAP:
+                view.showReservationOverlapToast();
         }
         if (comprobation == ReserveComprobation.COMPROBATION_OK) {
             model.addReservation(reservation);

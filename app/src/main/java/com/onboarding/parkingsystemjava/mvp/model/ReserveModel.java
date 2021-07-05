@@ -4,6 +4,7 @@ import com.onboarding.parkingsystemjava.database.ParkingDatabase;
 import com.onboarding.parkingsystemjava.entity.Reservation;
 import com.onboarding.parkingsystemjava.mvp.contract.ReserveActivityContract;
 import com.onboarding.parkingsystemjava.utils.ConstantUtils;
+import com.onboarding.parkingsystemjava.utils.ReservationVerifier;
 import com.onboarding.parkingsystemjava.utils.ReserveComprobation;
 import java.util.Calendar;
 import static com.onboarding.parkingsystemjava.utils.ReserveComprobation.COMPROBATION_OK;
@@ -11,19 +12,22 @@ import static com.onboarding.parkingsystemjava.utils.ReserveComprobation.MISSING
 import static com.onboarding.parkingsystemjava.utils.ReserveComprobation.MISSING_LOT;
 import static com.onboarding.parkingsystemjava.utils.ReserveComprobation.MISSING_PASSWORD;
 import static com.onboarding.parkingsystemjava.utils.ReserveComprobation.MISSING_START;
+import static com.onboarding.parkingsystemjava.utils.ReserveComprobation.RESERVATION_OVERLAP;
 
 public class ReserveModel implements ReserveActivityContract.ReserveModel {
     private final ParkingDatabase database;
     private final Reservation reservation;
+    private ReservationVerifier verifier;
 
-    public ReserveModel(ParkingDatabase database) {
+    public ReserveModel(ParkingDatabase database, ReservationVerifier verifier) {
         this.database = database;
         this.reservation = new Reservation();
+        this.verifier = verifier;
     }
 
     @Override
     public void addReservation(Reservation reservation) {
-        database.addReservations(reservation);
+        database.addReservation(reservation);
     }
 
     public Reservation getReservation() {
@@ -41,16 +45,7 @@ public class ReserveModel implements ReserveActivityContract.ReserveModel {
     }
 
     public ReserveComprobation reserveFieldsCheck(Reservation reservation) {
-        if (reservation.getStartDate() == null)
-            return MISSING_START;
-        else if (reservation.getEndDate() == null)
-            return MISSING_END;
-        else if (reservation.getParkingLot() == ConstantUtils.INT_MINUS_ONE)
-            return MISSING_LOT;
-        else if (reservation.getUserPassword().isEmpty())
-            return MISSING_PASSWORD;
-        else
-            return COMPROBATION_OK;
+        return verifier.verifyReservation(reservation);
     }
 
     @Override
