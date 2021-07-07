@@ -24,4 +24,6 @@
     <string name="reservation_view_missing_user_password_toast">Por favor ingrese su clave</string>
     <string name="reservation_view_reservation_saved_toast">Reserva guardada con éxito</string>
     <string name="reservation_view_reservation_overlap_toast">Error: ya hay una reserva en ese espacio y horario</string>
+    <string name="main_activity_btn_remove_old_reservations">Eliminar reservas antiguas</string>
+    <string name="main_activity_reservations_removed_toast">Se borraron %1$d reservas.</string>
 </resources>

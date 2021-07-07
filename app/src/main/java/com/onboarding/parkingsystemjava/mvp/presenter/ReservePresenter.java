@@ -74,7 +74,7 @@ public class ReservePresenter implements ReserveActivityContract.ReservePresente
 
     private String getDateString(Calendar date) {
         return (date.get(Calendar.DAY_OF_MONTH) + ConstantUtils.SLASH +
-                date.get(Calendar.MONTH) + ConstantUtils.SLASH +
+                (date.get(Calendar.MONTH) + ConstantUtils.MONTH_ADJUSTMENT) + ConstantUtils.SLASH +
                 date.get(Calendar.YEAR) + ConstantUtils.SPACE +
                 date.get(Calendar.HOUR) + ConstantUtils.COLON +
                 date.get(Calendar.MINUTE));
