@@ -24,6 +24,7 @@ public class ParkingPresenter implements MainActivityContract.MainActivityPresen
 
     @Override
     public void onNewReservationButtonPressed() {
+        model.removeOldReservations();
         view.showNewReservationActivity();
     }
 
