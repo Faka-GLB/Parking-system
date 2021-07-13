@@ -12,4 +12,3 @@ public class ConstantUtils {
     public static int INT_ZERO = 0;
     public static int LOT_NOT_SET_VALUE = -1;
 }
-
