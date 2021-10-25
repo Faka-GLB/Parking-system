@@ -3,21 +3,14 @@ package com.onboarding.parkingsystemjava.mvp.model;
 import com.onboarding.parkingsystemjava.database.ParkingDatabase;
 import com.onboarding.parkingsystemjava.entity.Reservation;
 import com.onboarding.parkingsystemjava.mvp.contract.ReserveActivityContract;
-import com.onboarding.parkingsystemjava.utils.ConstantUtils;
 import com.onboarding.parkingsystemjava.utils.ReservationVerifier;
 import com.onboarding.parkingsystemjava.utils.ReserveComprobation;
 import java.util.Calendar;
-import static com.onboarding.parkingsystemjava.utils.ReserveComprobation.COMPROBATION_OK;
-import static com.onboarding.parkingsystemjava.utils.ReserveComprobation.MISSING_END;
-import static com.onboarding.parkingsystemjava.utils.ReserveComprobation.MISSING_LOT;
-import static com.onboarding.parkingsystemjava.utils.ReserveComprobation.MISSING_PASSWORD;
-import static com.onboarding.parkingsystemjava.utils.ReserveComprobation.MISSING_START;
-import static com.onboarding.parkingsystemjava.utils.ReserveComprobation.RESERVATION_OVERLAP;
 
 public class ReserveModel implements ReserveActivityContract.ReserveModel {
     private final ParkingDatabase database;
     private final Reservation reservation;
-    private ReservationVerifier verifier;
+    private final ReservationVerifier verifier;
 
     public ReserveModel(ParkingDatabase database, ReservationVerifier verifier) {
         this.database = database;

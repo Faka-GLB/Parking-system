@@ -5,7 +5,6 @@ import com.onboarding.parkingsystemjava.databinding.DateTimePickerReservationFra
 import com.onboarding.parkingsystemjava.listener.DateTimeListener;
 import com.onboarding.parkingsystemjava.mvp.contract.DateTimePickerContract;
 import com.onboarding.parkingsystemjava.mvp.view.base.FragmentView;
-import com.onboarding.parkingsystemjava.utils.ConstantUtils;
 import java.util.Calendar;
 import java.util.GregorianCalendar;
 

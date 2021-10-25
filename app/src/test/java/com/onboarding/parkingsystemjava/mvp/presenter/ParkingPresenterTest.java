@@ -35,7 +35,6 @@ public class ParkingPresenterTest {
     @Test
     public void setParkingLotsTest() {
         parkingPresenter.setParkingLots(PARKING_LOT);
-
         assertEquals(PARKING_LOT, ParkingDatabase.getInstance().getParkingLots());
     }
 
